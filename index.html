@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090611">
+<meta name="description" content="Vexus Star — AI-powered video creativity, 3D characters, animation and digital worlds.">
+<title>VEXUS STAR — Creative Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#090611;--panel:#120c20;--purple:#9b5cff;--pink:#d28bff;--text:#f7f1ff;--muted:#aaa0bb;--line:rgba(190,145,255,.18)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 8%,rgba(119,54,190,.22),transparent 35%),radial-gradient(ellipse at 90% 40%,rgba(89,43,160,.16),transparent 32%),#090611}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.16;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+a{color:inherit;text-decoration:none}
+.nav{max-width:1200px;margin:auto;padding:26px 6%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.16em;font-size:18px}
+.logo b{color:var(--pink)}
+.nav-link{color:#e5d7f7;font-size:13px;border:1px solid var(--line);border-radius:30px;padding:11px 18px;transition:.25s}
+.nav-link:hover{background:#9b5cff22;border-color:var(--purple);box-shadow:0 0 22px #9b5cff33}
+.hero{max-width:1200px;margin:auto;padding:94px 6% 82px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#d9baff;text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:700}
+.eyebrow:before{content:"";width:25px;height:1px;background:var(--pink);box-shadow:0 0 12px var(--pink)}
+h1{font:700 clamp(48px,8vw,96px)/.98 'Space Grotesk',sans-serif;letter-spacing:-.065em;margin:24px 0 22px;max-width:850px}
+h1 span{background:linear-gradient(100deg,#fff 0%,#d6b5ff 45%,#9a5bff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{max-width:590px;color:var(--muted);font-size:16px;line-height:1.8}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:8px;font-weight:700;font-size:12px;letter-spacing:.08em;transition:.25s}
+.btn-primary{background:linear-gradient(110deg,#8e4de9,#bd79ff);color:white;box-shadow:0 10px 35px #9b5cff35}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.hero-orb{position:absolute;right:9%;top:100px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e5c9ff55,#a45cff22 35%,transparent 70%);filter:blur(2px);pointer-events:none;animation:float 7s ease-in-out infinite}
+.hero-orb:after{content:"";position:absolute;inset:20px;border:1px solid #c18cff33;border-radius:50%;box-shadow:0 0 55px #9b5cff33,inset 0 0 45px #9b5cff22}
+@keyframes float{50%{transform:translateY(-18px) scale(1.04)}}
+.section{max-width:1200px;margin:auto;padding:36px 6% 100px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.kicker{color:var(--pink);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+h2{font:700 clamp(30px,4vw,46px)/1.1 'Space Grotesk',sans-serif;margin:10px 0 0;letter-spacing:-.04em}
+.count{color:var(--muted);font-size:12px;letter-spacing:.12em}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
+.filter{border:1px solid var(--line);background:#120c20;color:#bfb2d0;padding:9px 14px;border-radius:30px;font:600 11px 'DM Sans';cursor:pointer;transition:.2s}
+.filter.active,.filter:hover{color:white;border-color:#a66bff;background:#9b5cff22}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.project-card{background:linear-gradient(145deg,#171024,#0f0a19);border:1px solid var(--line);border-radius:13px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.project-card:hover{transform:translateY(-7px);border-color:#a66bff88;box-shadow:0 18px 50px #0008,0 0 28px #9b5cff18}
+.project-image{display:block;position:relative;aspect-ratio:1.42;overflow:hidden;background:#171020}
+.project-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#09061188,transparent 50%);opacity:.55;transition:.3s}
+.project-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.project-card:hover img{transform:scale(1.06)}
+.view-project{position:absolute;z-index:1;bottom:16px;left:17px;font-size:10px;font-weight:700;letter-spacing:.15em;color:white;opacity:0;transform:translateY(7px);transition:.25s}
+.project-card:hover .view-project{opacity:1;transform:translateY(0)}
+.view-project span{color:#d5aaff;font-size:15px;margin-left:5px}
+.project-info{padding:18px 18px 20px}
+.project-category{font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:#c18cff;font-weight:700}
+.project-info h3{font:600 17px 'Space Grotesk',sans-serif;margin:9px 0 7px}
+.project-info p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.about{max-width:1200px;margin:0 auto 90px;padding:0 6%}
+.about-inner{border:1px solid var(--line);border-radius:16px;padding:34px;background:linear-gradient(115deg,#1b102b,#100b1b);display:flex;align-items:center;justify-content:space-between;gap:30px}
+.about h2{font-size:30px;margin:0 0 12px}
+.about p{color:var(--muted);line-height:1.7;max-width:650px;font-size:14px;margin:0}
+.footer{border-top:1px solid var(--line);padding:24px 6%;text-align:center;color:#8e829f;font-size:11px;letter-spacing:.08em}
+@media(max-width:850px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-orb{right:0;opacity:.5;width:180px;height:180px}}
+@media(max-width:560px){.nav{padding:20px 5%}.hero{padding:65px 6% 60px}.hero-orb{top:40px;right:-55px;opacity:.35}.project-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.about-inner{padding:24px;align-items:start;flex-direction:column}h1{font-size:54px}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#top">VEXUS <b>STAR</b></a>
+  <a class="nav-link" href="#work">EXPLORE THE WORK ↘</a>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-orb"></div>
+    <div class="eyebrow">CREATIVE PORTFOLIO</div>
+    <h1>TURNING IDEAS<br>INTO <span>VISUAL REALITY.</span></h1>
+    <p class="hero-copy">A creative space for AI-powered video editing, visual storytelling, 3D characters, animation and imaginative digital worlds. Explore selected projects and discover the details behind each creation.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#work">EXPLORE PROJECTS <span>↗</span></a>
+    </div>
+  </section>
+  <section class="section" id="work">
+    <div class="section-head">
+      <div><div class="kicker">SELECTED CREATIONS</div><h2>Featured Projects</h2></div>
+      <div class="count">09 PROJECTS / VEXUS STAR</div>
+    </div>
+    <div class="filters">
+      <button class="filter active" data-filter="All">ALL WORK</button>
+      <button class="filter" data-filter="3D Characters">3D CHARACTERS</button>
+      <button class="filter" data-filter="Animation">ANIMATION</button>
+      <button class="filter" data-filter="Game UI">GAME UI</button>
+      <button class="filter" data-filter="Environments">ENVIRONMENTS</button>
+      <button class="filter" data-filter="Visual Design">VISUAL DESIGN</button>
+    </div>
+    <div class="project-grid">
+      
+    <article class="project-card" data-category="3D Characters">
+      <a class="project-image" href="https://www.behance.net/gallery/256133841/Realistic-Game-Characters" target="_blank" rel="noopener noreferrer" aria-label="Open Realistic Game Characters on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/f8969d256133841.Y3JvcCwxMjk1LDEwMTIsMCwxMDI.png" alt="Realistic Game Characters" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">3D Characters</span>
+        <h3>Realistic Game Characters</h3>
+        <p>Detailed character design and realistic 3D presentation.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Animation">
+      <a class="project-image" href="https://www.behance.net/gallery/256728709/Roblox-Minecraft-Animations" target="_blank" rel="noopener noreferrer" aria-label="Open Roblox & Minecraft Animations on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/ab41bd256728709.Y3JvcCwxNDE3LDExMDgsMCww.png" alt="Roblox & Minecraft Animations" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">Animation</span>
+        <h3>Roblox & Minecraft Animations</h3>
+        <p>Animated worlds and cinematic game-inspired scenes.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Game UI">
+      <a class="project-image" href="https://www.behance.net/gallery/256375017/UI-Game-Interface" target="_blank" rel="noopener noreferrer" aria-label="Open UI / Game Interface on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/fcd480256375017.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="UI / Game Interface" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">Game UI</span>
+        <h3>UI / Game Interface</h3>
+        <p>A visual interface concept for an immersive game experience.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="3D Characters">
+      <a class="project-image" href="https://www.behance.net/gallery/256372307/Roblox-Characters-Skins" target="_blank" rel="noopener noreferrer" aria-label="Open Roblox Characters & Skins on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/bce797256372307.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="Roblox Characters & Skins" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">3D Characters</span>
+        <h3>Roblox Characters & Skins</h3>
+        <p>Custom character looks and stylized 3D designs.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="3D Characters">
+      <a class="project-image" href="https://www.behance.net/gallery/256371167/2D-3D-Character-Game-Ready-and-Custom-Characters" target="_blank" rel="noopener noreferrer" aria-label="Open 2D & 3D Custom Characters on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/85f790256371167.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="2D & 3D Custom Characters" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">3D Characters</span>
+        <h3>2D & 3D Custom Characters</h3>
+        <p>Character modeling, visual development and presentation.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="3D Characters">
+      <a class="project-image" href="https://www.behance.net/gallery/256369031/CUSTOM-LOW-POLY-CHARACTERS-FOR-GAME-3D-PROJECTS" target="_blank" rel="noopener noreferrer" aria-label="Open Custom Low Poly Characters on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/1a0cc3256369031.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="Custom Low Poly Characters" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">3D Characters</span>
+        <h3>Custom Low Poly Characters</h3>
+        <p>Low-poly character modeling for digital projects.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Environments">
+      <a class="project-image" href="https://www.behance.net/gallery/256368273/CUSTOM-FANTASY-MEDIEVAL-MAPS-FOR-MINECRAFT-ROBLOX" target="_blank" rel="noopener noreferrer" aria-label="Open Fantasy & Medieval Maps on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/0df1b3256368273.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="Fantasy & Medieval Maps" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">Environments</span>
+        <h3>Fantasy & Medieval Maps</h3>
+        <p>Fantasy environments and imaginative world-building.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Environments">
+      <a class="project-image" href="https://www.behance.net/gallery/256365955/Medieval-Builds" target="_blank" rel="noopener noreferrer" aria-label="Open Medieval Builds on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/bf90fe256365955.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="Medieval Builds" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">Environments</span>
+        <h3>Medieval Builds</h3>
+        <p>Atmospheric medieval architecture and scene design.</p>
+      </div>
+    </article>
+    
+    <article class="project-card" data-category="Visual Design">
+      <a class="project-image" href="https://www.behance.net/gallery/256215739/Emergency-Response-Fleet" target="_blank" rel="noopener noreferrer" aria-label="Open Emergency Response Fleet on Behance">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/59f9c7256215739.Y3JvcCw4MDgsNjMyLDAsMA.png" alt="Emergency Response Fleet" loading="lazy">
+        <span class="view-project">VIEW PROJECT <span>↗</span></span>
+      </a>
+      <div class="project-info">
+        <span class="project-category">Visual Design</span>
+        <h3>Emergency Response Fleet</h3>
+        <p>A detailed vehicle visualization project.</p>
+      </div>
+    </article>
+    
+    </div>
+  </section>
+  <section class="about">
+    <div class="about-inner">
+      <div><h2>LET'S CREATE SOMETHING<br><span style="color:#c18cff">UNFORGETTABLE.</span></h2>
+      <p>Explore the selected work above. Each project card opens its original Behance project so you can view the full presentation and details.</p></div>
+    </div>
+  </section>
+</main>
+<footer class="footer">© 2026 VEXUS STAR · CREATIVE PORTFOLIO</footer>
+<script>
+const filters = document.querySelectorAll('.filter');
+const cards = document.querySelectorAll('.project-card');
+filters.forEach(button => button.addEventListener('click', () => {
+  filters.forEach(item => item.classList.remove('active'));
+  button.classList.add('active');
+  const value = button.dataset.filter;
+  cards.forEach(card => card.hidden = value !== 'All' && card.dataset.category !== value);
+}));
+</script>
+</body>
+</html>
